@@ -1,11 +1,5 @@
-name: Manual Run
-on:
-  workflow_dispatch:
-    inputs:
-      name:
-        description: Put email(s)
-        required: false
-        default: '@gmail.com'
+name: Push Run
+on: [push]
 
 # Job lists of the workflow
 # This job requires the OS to be run as follows
@@ -13,7 +7,7 @@ on:
 
 jobs:
   Test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
@@ -29,7 +23,7 @@ jobs:
         id: maven
         uses: stCarolas/setup-maven@v4.2
         with:
-          maven-version: '3.8.4'
+          maven-version: '3.8.6'
 
       # Cache the maven packages to make the run fast
       - name: Cache the Maven packages
@@ -47,7 +41,8 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
           GITLAB_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
           GITLAB_USERNAME: ${{ secrets.GITLAB_USERNAME }}
-        run: mvn install -e --file pom.xml
+        #mvn install -e --file pom.xml
+        run: mvn test 
 
 
 
