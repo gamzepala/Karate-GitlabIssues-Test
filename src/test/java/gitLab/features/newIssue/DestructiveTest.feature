@@ -6,8 +6,6 @@ Background: Define URL
     * url apiUrl
     * def projectId = 40851737
     * def issueRequestBody = read("classpath:gitLab/json/requestJson/emptyNewIssueRequest.json")
-    * 
-
 
     Scenario: Empty payload request
         Given path "projects", projectId,"issues"
