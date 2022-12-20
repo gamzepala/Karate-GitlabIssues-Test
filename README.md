@@ -18,7 +18,7 @@ All details about the object, approach, features to be tested and more in [Test 
 ## 3. How to run test in your local
 1. Clone the repository
 ```
-https://github.com/alipala/gitlabapi.git
+https://github.com/gamzepala/Karate-GitlabIssues-Test.git
 ```
 
 2. The project supports Maven build. To run the tests with Maven, open a command window and run:
