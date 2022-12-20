@@ -1,0 +1,36 @@
+
+#TODO schema 
+#TODO generic match
+#TODO outline
+#TODO retry and sleep
+#TODO gatling
+   #TODO : Tarihler için ignore olanı değiştir.
+    #TODO : schema için birkaç alanı güncelleme
+
+
+# Negative tests with valid input
+# Examples: 
+# Attempting to create a resource with a name that already exists
+# Attempting to delete a resource that does not exist 
+# Attempting to update a resource with illegal valid data(Rename it to an existing name)
+# Attempting to delete a resource without 
+
+# Negative tests with invalid input
+# Examples: 
+# Missing or invalid authorisation token
+# Missing required parameters-
+# Invalid path or query parameters
+# Payload with invalid model(Schema violation)
+# Payload with incomplete mode(Missing fields)
+# Invalid values in headers
+# Unsupported method for the endpoints
+
+
+# Destructive tests(Intentionally attempt to fail the APIs to check robustness)
+# Examples:
+# Malformed content in the request
+# Incorrect content-type in payload
+# Overflow parameter values
+# Empty payloads
+# Illegal characters in parameters or payload
+# Concurrent API calls for the same resources
