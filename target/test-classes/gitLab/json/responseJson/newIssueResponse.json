@@ -50,7 +50,6 @@
     },
     "blocking_issues_count": "##number",
     "has_tasks": "#boolean",
-    "task_status":"#string",
     "_links": {
         "self": "#string",
         "notes": "#string",
@@ -64,6 +63,7 @@
         "full": "#string"
     },
     "severity": "#string",
+    "subscribed": "#boolean",
     "moved_to_id": "##number",
     "service_desk_reply_to": "##string"
 }
