@@ -25,11 +25,13 @@ Feature: Get List Issues
         When method Get
         Then status 200
         * def iid = response[0].iid
+        And assert responseTime < 1000
 
         Given param iids[] = iid 
         Given path 'issues'
         When method Get
         Then status 200
+        And assert responseTime < 1000
         And match response[0] == "#object"
         And match response[0] == jsonSchemaExpected 
 

@@ -17,8 +17,11 @@ Scenario: Schema Validation
     #TODO : Tarihler için ignore olanı değiştir.
 
 Scenario: Get all issues without filter
+
     Given path "projects", projectId,"issues",issueId
     When method Get
     Then status 200
+    And assert responseTime < 1000
+
 
 

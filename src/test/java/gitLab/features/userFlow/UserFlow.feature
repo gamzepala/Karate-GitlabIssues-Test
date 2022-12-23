@@ -1,3 +1,4 @@
+
 Feature: User Flow Test
 
     Background: Define URL
@@ -8,15 +9,16 @@ Feature: User Flow Test
     * def randomValues = dataGenerator.getRandomIssueValues()
     * set issueRequestBody.title = randomValues.title
     * set issueRequestBody.description = randomValues.description
+
+    # Lİst issues
+    Given path 'issues'
+    When method Get
+    Then status 200
+    * def projectId = response[0].project_id
+
   
     Scenario: Create - List - Update - List - Delete - List
-
-        # Lİst issues
-        Given path 'issues'
-        When method Get
-        Then status 200
-        * def projectId = response[0].project_id
-
+     
         # Create issue
         Given path "projects", projectId,"issues"
         And request issueRequestBody
@@ -59,27 +61,3 @@ Feature: User Flow Test
         Then status 404
         And match response.title == "#notpresent"
 
-
-#TODO schema 
-#TODO generic match
-#TODO outline
-#TODO  retry and sleep
-#TODO gatling
-
-
-# Negative tests with valid input
-# Examples: 
-# Attempting to create a resource with a name that already exists
-# Attempting to delete a resource that does not exist 
-# Attempting to update a resource with illegal valid data(Rename it to an existing name)
-# Attempting to delete a resource without 
-
-# Negative tests with invalid input
-# Examples: 
-# Missing or invalid authorisation token
-# Missing required parameters-
-# Invalid path or query parameters
-# Payload with invalid model(Schema violation)
-# Payload with incomplete mode(Missing fields)
-# Invalid values in headers
-# Unsupported metho

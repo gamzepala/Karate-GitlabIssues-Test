@@ -10,6 +10,7 @@ Feature: Update issue
         Given path 'issues'
         When method Get
         Then status 200
+        And assert responseTime < 1000
         * def projectId = response[0].project_id
         * def issueId = response[0].iid
 
@@ -17,6 +18,7 @@ Feature: Update issue
         And request patchIssueRequestBody
         When method Put
         Then status 200
+        And assert responseTime < 1000
         Then match response == "#object"
 
        

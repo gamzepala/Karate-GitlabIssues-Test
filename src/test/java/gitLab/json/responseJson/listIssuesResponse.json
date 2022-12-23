@@ -50,7 +50,6 @@
     },
     "blocking_issues_count": "##number",
     "has_tasks": "#boolean",
-    "task_status":"#string",
     "_links": {
         "self": "#string",
         "notes": "#string",
