@@ -7,7 +7,6 @@ Background: Define URL
         Given path 'issues'
         When method Get
         Then status 200
-        And match response.assignees.username == 'gamze.dedepala'
         * def projectId = response[0].project_id
         * def issueId = response[0].iid
 

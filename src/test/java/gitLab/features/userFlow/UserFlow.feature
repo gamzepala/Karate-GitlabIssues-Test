@@ -1,5 +1,3 @@
-
-
 Feature: User Flow Test
 
     Background: Define URL

@@ -18,6 +18,5 @@ function fn() {
   karate.configure("headers",{Authorization: "Bearer " + accessToken})
 
   
-  
   return config;
 }
