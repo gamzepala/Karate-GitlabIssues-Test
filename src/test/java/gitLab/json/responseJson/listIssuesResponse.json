@@ -21,14 +21,7 @@
         "web_url": "#string"
     },
     "type": "#string",
-    "assignee": {
-        "id": "#present",
-        "username": "#present",
-        "name": "#present",
-        "state": "#present",
-        "avatar_url": "#string",
-        "web_url": "#string"
-    },
+    "assignee": "#ignore",
     "user_notes_count": "##number",
     "merge_requests_count": "##number",
     "upvotes": "##number",

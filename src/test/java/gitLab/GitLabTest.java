@@ -9,6 +9,9 @@ class GitLabTest {
 
     @Test
     void testParallel() {
+
+        // Write the path of the project file
+        
         Results results = Runner.path("classpath:gitLab")
                 //.outputCucumberJson(true)
                 .parallel(5);

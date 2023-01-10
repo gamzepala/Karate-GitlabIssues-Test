@@ -5,7 +5,7 @@ import net.minidev.json.JSONObject;
 
 public class DataGenerator {
     
-
+    // Random data generated for Issue's Title and Description by Faker 
     public static JSONObject getRandomIssueValues(){
         
         Faker faker = new Faker();

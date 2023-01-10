@@ -6,6 +6,7 @@ function fn() {
   }
   var config = {
   
+    // apiUrl : Using Gitlab Base Url
     apiUrl : 'https://gitlab.com/api/v4'
   }
   if (env == 'dev') {
@@ -14,9 +15,10 @@ function fn() {
 
   }
 
+  // accessToken comes from helpers/authentication.feature
   var accessToken = karate.callSingle("classpath:helpers/authentication.feature").accessToken
-  karate.configure("headers",{Authorization: "Bearer " + accessToken})
 
-  
+  // "headers" is used for all http calls 
+  karate.configure("headers",{Authorization: "Bearer " + accessToken})
   return config;
 }

@@ -1,26 +1,27 @@
-Feature:Negative Tests
 
-Background: Define baseURL
-    * url apiUrl
+# List all issues negative test
+Feature:List all issues negative test
 
+    Background: 
 
-Scenario: Attempting to list a non-existent iids
-
-    Given path 'issues'
-    When method Get
-    Then status 200
-    * def iid = response[0].iid
-
-    Given param iids[] = iid+1
-    Given path 'issues'
-    When method Get
-    Then status 200
-    And match response[0] ==  "#notpresent"
+        # apiUrl from "karate-config.js"
+        * url apiUrl
 
 
-# Scenario: Content-Type != application/json
+    # Attempting to authenticate with non exist accessToken
+    Scenario: Attempting to authenticate with non exist accessToken
 
-#     Given path 'issues'
-#     And header "a"
-#     When method Get
-#     Then status 200
+        # Non exist token is defined for headers-Authorization.
+        * configure headers = { Authorization: "Bearer 123453948858ldjdo" }
+        Given path 'issues'
+        When method Get
+        Then status 401
+        And match response == "#present"
+        And match response == "#notnull"
+        And match response == {"message":"401 Unauthorized"}
+  
+
+
+
+
+
